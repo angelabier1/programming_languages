@@ -1,0 +1,65 @@
+
+<div class="container">
+  <div id="splitlayout" class="splitlayout">
+    <div class="intro">
+      <div class="side side-left">
+        <header class="codropsheader clearfix">
+          <span>programming_languages</span>
+          <h1>Javascript vs Ruby</h1>
+          <nav>
+            <%= link_to "", similarities_path %>
+            <!--a href="" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a-->
+            <!--<a href="http://tympanus.net/codrops/?p=16693" class="bp-icon bp-icon-drop" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>-->
+            <%= link_to "", differences_path%>
+          </nav>
+        </header>
+        <div class="intro-content">
+         <div class="profile"><%=image_tag("equal.png", size: "130x130", alt: "Equal")%></div>
+          <h1><span>Similarities</span></h1><span><%= link_to "Create new similarity", new_similarity_path %></span>
+        </div>
+        <div class="overlay"></div>
+      </div>
+      <div class="side side-right">
+        <div class="intro-content">
+          <div class="profile"><%=image_tag("not_equal.png", size: "130x130", alt: "Not Equal")%></div>
+          <h1><span>Differences </span></h1><span><%= link_to "Create new difference", new_difference_path %></span>
+        </div>
+        <div class="overlay"></div>
+      </div>
+    </div><!-- /intro -->
+    <div class="page page-right">
+      <div class="page-inner">
+        <section>
+          <h2>Differences</h2>
+          <ul>
+            <% @differences.each do |d| %>
+                <% unless d.title == nil %>
+            <li><%= link_to d.title, d %></li>
+                <% end %>
+                <% end %>
+          </ul>
+        </section>
+
+      </div><!-- /page-inner -->
+    </div><!-- /page-right -->
+    <div class="page page-left">
+      <div class="page-inner">
+        <section>
+          <h2>Similarities</h2>
+          <ul>
+            <% @similarities.each do |s| %>
+                <% unless s.title == nil %>
+                    <li><%= link_to s.title, s %></li>
+                <% end %>
+            <% end %>
+          </ul>
+        </section>
+      </div><!-- /page-inner -->
+    </div><!-- /page-left -->
+    <a href="#" class="back back-right" title="back to intro">&rarr;</a>
+    <a href="#" class="back back-left" title="back to intro">&larr;</a>
+  </div><!-- /splitlayout -->
+</div><!-- /container -->
+
+<%= javascript_include_tag 'classie' %>
+<%= javascript_include_tag 'cbpSplitLayout' %>

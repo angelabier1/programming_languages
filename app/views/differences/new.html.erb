@@ -1,0 +1,32 @@
+
+<span class="details">Add a Difference</span>
+
+
+<%=form_for @difference do |f| %>
+
+    <% if @difference.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@difference.errors.count, "error") %> prohibited
+            this difference from being saved:
+          </h2>
+          <ul>
+            <% @difference.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title%>
+    <br/>
+    <%= f.label :description, 'Description' %>
+    <%= f.text_area :description%>
+    <br/>
+
+
+    <%= f.submit 'Submit!', class:'button'%>
+<%end%>
+

@@ -1,0 +1,5 @@
+<section class="details">
+  <h2><%= @similarity.title %></h2>
+  <p><%=@similarity.description%></p>
+  <%= button_to 'Delete', @similarity, method: :delete, class: 'destroy', data: { confirm: "Are you sure?"} %>
+</section>

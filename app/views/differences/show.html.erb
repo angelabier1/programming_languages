@@ -1,0 +1,5 @@
+<section class="details">
+  <h2><%= @difference.title %></h2>
+  <p><%=@difference.description%></p>
+  <%= button_to 'Delete', @difference, method: :delete, class: 'destroy',data: { confirm: "Are you sure?"}  %>
+</section>

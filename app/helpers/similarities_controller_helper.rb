@@ -1,0 +1,2 @@
+module SimilaritiesControllerHelper
+end

@@ -1,0 +1,32 @@
+
+  <span>Add a Similarity</span>
+
+
+  <%=form_for @similarity do |f| %>
+
+      <% if @similarity.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@similarity.errors.count, "error") %> prohibited
+              this similarity from being saved:
+            </h2>
+            <ul>
+              <% @similarity.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+
+      <%= f.label :title, 'Title' %>
+      <%= f.text_field :title%>
+      <br/>
+      <%= f.label :description, 'Description' %>
+      <%= f.text_area :description%>
+      <br/>
+
+
+      <%= f.submit 'Submit!'%>
+  <%end%>
+
